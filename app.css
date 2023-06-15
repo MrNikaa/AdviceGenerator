@@ -1,0 +1,312 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /*
+  END OF CSS CLEAR
+*/
+
+  body
+  {
+    background-color: hsl(218, 23%, 16%);
+  }
+
+
+  .parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    background-color: hsl(217, 19%, 24%);
+    width: 30vw;
+    height: 35vh;
+    border-radius: 1.2em;
+    padding: 20px;
+  }
+
+  .quote
+  {
+    text-align: center;
+    color: hsl(193, 38%, 86%);
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    padding:5%;
+    text-overflow: ellipsis; /* Truncate text with an ellipsis when it overflows */
+  }
+
+  .divider
+  {
+    padding-top: 55px;
+  }
+
+  .advice-number {
+    padding-top: 20px; 
+    text-align: center;
+    color: hsl(150, 100%, 66%);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  .roll-container
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+
+  }
+  
+  .roll-button
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(150, 100%, 66%);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin-bottom: -46px;
+
+    transition: box-shadow 0.5s ease-in-out;
+  }
+
+  .roll-button:hover
+  {
+    box-shadow: 0px 0px 35px 12px rgba(150, 255, 212, 0.5);
+    cursor:pointer;
+  }
+
+  .dice-animation {
+    animation-name: roll;
+    animation-duration: 2s;
+  }
+  
+  @keyframes roll {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px)
+{
+  .advice-number 
+  {
+    font-size:10px;
+  }
+
+  .quote
+  {
+    font-size: 14px;
+  }
+
+  .card 
+  {
+    width: 80vw;
+    height: 65vh;
+  }
+
+  .divider
+  {
+    padding-top: 0px;
+  }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px)
+ {
+  .advice-number 
+  {
+    font-size:12px;
+  }
+  .quote
+  {
+    font-size: 16px;
+  }
+
+  .card 
+  {
+    width: 55vw;
+    height: 75vh;
+  }
+
+  .divider
+  {
+    padding-top: 25px;
+  }
+
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (max-height: 600px)
+ {
+
+  .divider
+  {
+    padding-top: 25px;
+  }
+
+ }
+
+ 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-height: 600px)
+ {
+
+  .divider
+  {
+    padding-top: 50px;
+  }
+
+  
+  .card 
+  {
+    width: 60vw;
+    height: 40vh;
+  }
+
+ }
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) 
+{
+
+  .card 
+  {
+    width: 55vw;
+    height: 70vh;
+  }
+
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-height: 768px) 
+{
+  .advice-number 
+  {
+    font-size:14px;
+  }
+  .quote
+  {
+    font-size: 20px;
+  }
+
+  .card 
+  {
+    width: 65vw;
+    height: 45vh;
+  }
+
+  
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+  .quote
+  {
+    font-size: 28px;
+  }
+
+  .card 
+  {
+    width: 40vw;
+    height: 60vh;
+  }
+
+  .divider
+  {
+    padding-top: 15px;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 1280px and up) */
+@media only screen and (min-width: 1280px)
+{
+  .quote
+  {
+    font-size: 28px;
+  }
+
+  .card 
+  {
+    width: 35vw;
+    height: 42vh;
+  }
+
+  .divider
+  {
+    padding-top: 5px;
+  }
+
+}
+
+
+
+
+
+
+  
